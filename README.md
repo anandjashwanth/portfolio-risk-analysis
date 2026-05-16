@@ -39,6 +39,58 @@ Python · pandas · NumPy · yfinance · matplotlib · seaborn · scipy
 
 
 ```python
+import os
+import matplotlib.pyplot as plt
+
+# Force save to your exact project folder
+SAVE_PATH = r"C:\Users\Jashwanth\OneDrive\Desktop\Jashwanth_Documents\Projects\Portfolio-risk-analysis"
+
+for i, name in enumerate(['correlation_matrix', 'rolling_volatility', 
+                           'cumulative_returns', 'value_at_risk', 
+                           'factor_exposure', 'sharpe_ratios']):
+    try:
+        plt.figure(i + 1)
+        full_path = os.path.join(SAVE_PATH, f'{name}.png')
+        plt.savefig(full_path, dpi=150, bbox_inches='tight')
+        print(f"✓ Saved: {full_path}")
+    except Exception as e:
+        print(f"✗ Failed {name}: {e}")
+```
+
+    ✓ Saved: C:\Users\Jashwanth\OneDrive\Desktop\Jashwanth_Documents\Projects\Portfolio-risk-analysis\correlation_matrix.png
+    ✓ Saved: C:\Users\Jashwanth\OneDrive\Desktop\Jashwanth_Documents\Projects\Portfolio-risk-analysis\rolling_volatility.png
+    ✓ Saved: C:\Users\Jashwanth\OneDrive\Desktop\Jashwanth_Documents\Projects\Portfolio-risk-analysis\cumulative_returns.png
+    ✓ Saved: C:\Users\Jashwanth\OneDrive\Desktop\Jashwanth_Documents\Projects\Portfolio-risk-analysis\value_at_risk.png
+    ✓ Saved: C:\Users\Jashwanth\OneDrive\Desktop\Jashwanth_Documents\Projects\Portfolio-risk-analysis\factor_exposure.png
+    ✓ Saved: C:\Users\Jashwanth\OneDrive\Desktop\Jashwanth_Documents\Projects\Portfolio-risk-analysis\sharpe_ratios.png
+    
+
+
+    <Figure size 640x480 with 0 Axes>
+
+
+
+    <Figure size 640x480 with 0 Axes>
+
+
+
+    <Figure size 640x480 with 0 Axes>
+
+
+
+    <Figure size 640x480 with 0 Axes>
+
+
+
+    <Figure size 640x480 with 0 Axes>
+
+
+
+    <Figure size 640x480 with 0 Axes>
+
+
+
+```python
 import sys
 !{sys.executable} -m pip install yfinance pandas numpy matplotlib seaborn scipy
 ```
@@ -125,11 +177,13 @@ prices.tail(3)
     
 
     [*********************100%***********************]  6 of 6 completed
-    
 
     
     Data shape: (1257, 6)
     Date range: 2020-01-02 to 2024-12-30
+    
+
+    
     
 
 
@@ -173,30 +227,30 @@ prices.tail(3)
   <tbody>
     <tr>
       <th>2024-12-26</th>
-      <td>257.375580</td>
-      <td>194.699875</td>
-      <td>235.823608</td>
+      <td>257.375549</td>
+      <td>194.69989</td>
+      <td>235.823624</td>
       <td>433.911407</td>
       <td>592.741577</td>
-      <td>82.841957</td>
+      <td>82.841988</td>
     </tr>
     <tr>
       <th>2024-12-27</th>
-      <td>253.967392</td>
-      <td>191.872925</td>
-      <td>233.912903</td>
+      <td>253.967361</td>
+      <td>191.87294</td>
+      <td>233.912888</td>
       <td>426.404083</td>
       <td>586.502014</td>
       <td>82.162788</td>
     </tr>
     <tr>
       <th>2024-12-30</th>
-      <td>250.598907</td>
-      <td>190.359955</td>
-      <td>232.118561</td>
-      <td>420.758698</td>
-      <td>579.809204</td>
-      <td>82.823112</td>
+      <td>250.598877</td>
+      <td>190.35994</td>
+      <td>232.118576</td>
+      <td>420.758667</td>
+      <td>579.809143</td>
+      <td>82.823120</td>
     </tr>
   </tbody>
 </table>
@@ -258,7 +312,7 @@ print("Key insight: TLT (bonds) shows negative/low correlation with equities —
 
 
     
-![png](output_5_0.png)
+![png](output_6_0.png)
     
 
 
@@ -295,7 +349,7 @@ plt.show()
 
 
     
-![png](output_6_0.png)
+![png](output_7_0.png)
     
 
 
@@ -332,7 +386,7 @@ plt.show()
 
 
     
-![png](output_7_0.png)
+![png](output_8_0.png)
     
 
 
@@ -384,7 +438,7 @@ plt.show()
 
 
     
-![png](output_8_1.png)
+![png](output_9_1.png)
     
 
 
@@ -443,7 +497,7 @@ print("\nInterpretation: Beta > 1 = more volatile than market | Beta < 0 = negat
 
 
     
-![png](output_9_1.png)
+![png](output_10_1.png)
     
 
 
@@ -499,7 +553,7 @@ plt.show()
 
 
     
-![png](output_10_1.png)
+![png](output_11_1.png)
     
 
 
